@@ -1,1 +1,87 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="description"
+      content="Take a quick Minecraft-inspired personality quiz and discover if you're a Fighter, Miner, Builder, or Farmer."
+    />
+    <title>Minecraft Personality Quiz</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Tiny5&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="site-header">
+        <span class="header-note">A little personality quiz</span>
+      </header>
 
+      <section id="welcome-screen" class="screen welcome-screen" aria-labelledby="welcome-title">
+        <div class="welcome-copy">
+          <h1 id="welcome-title">What kind of<br /><span>Minecraft</span> player are you?</h1>
+          <p class="intro">
+            Every world needs someone brave, someone curious, someone creative, and someone who
+            keeps the carrots growing. Answer a few questions to find your role.
+          </p>
+          <!-- Preview the four possible quiz roles. -->
+          <div class="role-preview" aria-label="Possible roles">
+            <span class="role-chip"><span aria-hidden="true">⚔</span> Fighter</span>
+            <span class="role-chip"><span aria-hidden="true">◆</span> Miner</span>
+            <span class="role-chip"><span aria-hidden="true">▦</span> Builder</span>
+            <span class="role-chip"><span aria-hidden="true">✿</span> Farmer</span>
+          </div>
+          <button id="start-button" class="primary-button" type="button">
+            <span>Start the quiz</span><span aria-hidden="true">→</span>
+          </button>
+          <p class="quiz-note">5 questions <span aria-hidden="true">·</span> about 1 minute</p>
+        </div>
+        <p class="disclaimer">
+          A fan-made quiz. Not affiliated with or endorsed by Mojang or Microsoft.
+        </p>
+      </section>
+
+      <section id="quiz-screen" class="screen quiz-screen" aria-labelledby="question-title" hidden>
+        <div class="quiz-topline">
+          <button id="back-button" class="back-button" type="button" aria-label="Back to welcome screen">
+            <span aria-hidden="true">←</span> Back
+          </button>
+          <p id="question-count" class="question-count" aria-live="polite"></p>
+        </div>
+        <div
+          id="progress-track"
+          class="progress-track"
+          role="progressbar"
+          aria-label="Quiz progress"
+          aria-valuemin="1"
+          aria-valuemax="5"
+          aria-valuenow="1"
+        >
+          <div id="progress-fill" class="progress-fill"></div>
+        </div>
+        <div id="question-content" class="question-content"></div>
+        <p class="quiz-footer">Choose the answer that feels most like you.</p>
+      </section>
+
+      <section id="result-screen" class="screen result-screen" aria-labelledby="result-title" hidden>
+        <div id="result-content" class="result-copy"></div>
+        <button id="restart-button" class="primary-button" type="button">
+          <span>Play again</span><span aria-hidden="true">↻</span>
+        </button>
+        <p class="disclaimer">
+          A fan-made quiz. Not affiliated with or endorsed by Mojang or Microsoft.
+        </p>
+      </section>
+
+      <footer class="site-footer">
+        <span>MADE FOR YOUR NEXT ADVENTURE</span>
+      </footer>
+    </main>
+  </body>
+</html>
